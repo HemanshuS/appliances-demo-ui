@@ -1,0 +1,64 @@
+
+
+
+<section class="appliancesCSSClass" fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+    
+
+        <table mat-table [dataSource]="dataSource" #mytable class="mat-elevation-z8">
+
+            <ng-container matColumnDef="serialNo">
+                <mat-header-cell *matHeaderCellDef>SerialNo</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.serialNo}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="brand">
+                <mat-header-cell *matHeaderCellDef>Brand</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.brand}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="model">
+                <mat-header-cell *matHeaderCellDef>ModelNo</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.model}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="dateOfPurchase">
+                <mat-header-cell *matHeaderCellDef>DateOfPurchase</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.dateBought}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="state">
+                <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+               <mat-cell *matCellDef="let element">{{element.status}}</mat-cell>
+            
+            </ng-container>
+            <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+                <mat-cell *matCellDef="let element" class="action-link"> 
+                    <!--button mat-raised-button color="basic" [disabled]=false>Add Appliance</button> -->
+                    <button mat-icon-button  (click)="onEdit()"><mat-icon>launch</mat-icon></button>
+                    <button mat-icon-button color=warn ><mat-icon>delete_outline</mat-icon></button>
+                </mat-cell>
+            
+            </ng-container>
+           <!-- <ng-container matColumnDef="NewState">
+                <mat-form-field >
+                    <mat-label>Change state</mat-label>
+                    <mat-select>
+                      <mat-option value="InUse">
+                        InUse
+                      </mat-option>
+                      <mat-option value="Sold">
+                        Sold
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </ng-container>-->
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+        </table>  
+</section>
+<section fxLayout fxLayoutAlign="right">
+    <button mat-button  mat-raised-button (click)="addAppliance()" color="primary">+ Add Row</button>
+    <button mat-button  mat-raised-button (click)="callGetAppliances()" color="primary">Refresh</button>
+    
+</section>

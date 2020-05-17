@@ -1,0 +1,20 @@
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+a:hover,
+a:active{
+    color: rgb(117, 56, 56);
+}
+
+.navigation-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menuitem {
+  display: inline-block;
+  padding-left: 6px;
+}

@@ -1,0 +1,84 @@
+<form [formGroup]="form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" >
+<mat-form-field>
+    <input      
+    matInput placeholder="SerialNo*" 
+     formControlName="serialNo"     
+    >
+    <mat-error>Field must not be empty</mat-error>  
+</mat-form-field>
+  <mat-form-field>
+  <input      
+      matInput placeholder="Model*" 
+      formControlName="model"   
+      >
+      <mat-error>Field must not be empty</mat-error>   
+  </mat-form-field>
+  <mat-form-field>
+  <input      
+      matInput placeholder="Brand*" 
+      formControlName="brand"
+     >
+     <mat-error>Field must not be empty</mat-error> 
+  </mat-form-field>
+  <mat-form-field>
+    <input      
+      matInput [matDatepicker]="picker" placeholder="Date Bought*" 
+      formControlName="dateBought"      
+      >
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker>
+        </mat-datepicker>
+      <mat-error>Field must not be empty</mat-error>   
+  </mat-form-field>
+  <div class="button-row">
+    <button mat-raised-button type="submit" color="primary" [disabled]="form.invalid" (click)="onSubmit()">Add Appliance</button>
+    <button mat-raised-button color="warn"  (click)="onClear()">Clear</button>
+</div>
+</form>
+<!--<mat-toolbar>
+    <span></span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+  </mat-toolbar>
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+  
+        <div class="controles-container">
+          <input type="hidden" formControlName="$key">
+          <mat-form-field>
+            <input required formControlName="serialNo" matInput placeholder="SerialNo*">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input required formControlName="model" matInput placeholder="Model*">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <input required formControlName="date" matInput placeholder="Date">
+          </mat-form-field>
+        </div>
+    
+        <div class="controles-container">
+            <mat-form-field>
+                <input required formControlName="brand" matInput placeholder="Brand*">
+                <mat-error >This field is mandatory.</mat-error>
+               
+              </mat-form-field>          
+         
+          <mat-form-field>
+            <input required formControlName="dateBought" matInput [matDatepicker]="picker" placeholder="Date_Bought">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div class="add-bottom-padding">
+           
+          </div>
+          <div class="button-row">
+            <button mat-raised-button type="submit" color="primary" [disabled]="f.invalid">Submit</button>
+   
+            <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+          </div>
+        </div>
+     
+  </form>
+-->
