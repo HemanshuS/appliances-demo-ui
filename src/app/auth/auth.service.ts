@@ -3,6 +3,8 @@ import { AuthData } from './auth-data.model';
 import { Subject } from 'rxjs/Subject';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { NotificationComponent } from '../notification/notification.component';
 
 @Injectable()
 export class AuthService {
@@ -12,7 +14,7 @@ export class AuthService {
     private user: User;
     authChange = new Subject<boolean>();
 
-constructor(private router : Router){
+constructor(private router : Router, private notification: NotificationComponent){
 
 
 }
@@ -40,6 +42,7 @@ constructor(private router : Router){
         } else {
             
             console.log("incorrect user/password");
+            this.notification.successMsg('Invalid user/password');
         }
         
     }

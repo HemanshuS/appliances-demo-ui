@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth/auth.service';
 import { AppliancesService } from './appliances/appliances.service';
 import { DialogBoxComponent } from './appliances/dialog-box/dialog-box.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DialogBoxComponent } from './appliances/dialog-box/dialog-box.component
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
-    DialogBoxComponent
+    DialogBoxComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { DialogBoxComponent } from './appliances/dialog-box/dialog-box.component
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AppliancesService],
+  providers: [AuthService, AppliancesService,NotificationComponent],
   bootstrap: [AppComponent],
   entryComponents:[DialogBoxComponent]
 })

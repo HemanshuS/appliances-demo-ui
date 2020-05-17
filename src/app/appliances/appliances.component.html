@@ -1,22 +1,28 @@
 
+<div class="search-div">
+    <mat-form-field class="search-form-field">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyUp)="applyFilter()">
+        <button mat-icon-button matSuffix mat-button aria-label="Clear" *ngIf="searchKey" (click)="clearSearch()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
 
+<section class="appliancesCSSClass" fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">    
 
-<section class="appliancesCSSClass" fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
-    
-
-        <table mat-table [dataSource]="dataSource" #mytable class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource"  class="mat-elevation-z8" matSort>
 
             <ng-container matColumnDef="serialNo">
-                <mat-header-cell *matHeaderCellDef>SerialNo</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>SerialNo</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.serialNo}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="brand">
-                <mat-header-cell *matHeaderCellDef>Brand</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Brand</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.brand}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="model">
-                <mat-header-cell *matHeaderCellDef>ModelNo</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>ModelNo</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.model}}</mat-cell>
             </ng-container>
 
@@ -38,27 +44,15 @@
                 </mat-cell>
             
             </ng-container>
-           <!-- <ng-container matColumnDef="NewState">
-                <mat-form-field >
-                    <mat-label>Change state</mat-label>
-                    <mat-select>
-                      <mat-option value="InUse">
-                        InUse
-                      </mat-option>
-                      <mat-option value="Sold">
-                        Sold
-                      </mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </ng-container>-->
+           
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 
         </table>  
 </section>
-<section fxLayout fxLayoutAlign="right">
-    <button mat-button  mat-raised-button (click)="addAppliance()" color="primary">+ Add Row</button>
+<section fxLayout fxLayoutAlign="right right">
+    <button mat-button  mat-raised-button (click)="addAppliance()" color="primary">+ Add Appliance</button>
     <button mat-button  mat-raised-button (click)="callGetAppliances()" color="primary">Refresh</button>
     
 </section>

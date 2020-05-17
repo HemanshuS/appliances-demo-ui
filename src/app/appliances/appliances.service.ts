@@ -5,9 +5,10 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class AppliancesService{
 
-     private API_URL : String  = 'https://appliancesdemo.herokuapp.com/';
+     private API_URL : String  = 'http://localhost:8080/';
     todayString : string = new Date().toDateString();
-    /**private availableAppliances: Appliances[] = [
+    /**  private API_URL : String  = 'https://appliancesdemo.herokuapp.com/';
+     * private availableAppliances: Appliances[] = [
         {
            id:'1' , serialNo : '1' , brand : 'LG',dateBought : this.todayString ,status : 'InUse', model: 'Fridge1'
         },

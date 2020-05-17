@@ -8,7 +8,10 @@ import { MatButtonModule,
         MatTableModule,
         MatSelectModule,
         MatDialogModule,
-        MatGridListModule
+        MatGridListModule,
+        MatSnackBarModule,
+        MatPaginatorModule,
+        MatSortModule
     } from "@angular/material";
 import { MatIconModule} from "@angular/material";
 import { MatFormFieldModule} from "@angular/material";
@@ -33,7 +36,10 @@ import { MatDatepickerModule} from "@angular/material";
         MatTableModule,
         MatSelectModule,
         MatDialogModule,
-        MatGridListModule],
+        MatGridListModule,
+        MatSnackBarModule,
+        MatPaginatorModule,
+        MatSortModule],
     exports: [ MatButtonModule,
          MatIconModule,
          MatFormFieldModule,
@@ -47,7 +53,10 @@ import { MatDatepickerModule} from "@angular/material";
          MatTableModule,
          MatSelectModule,
          MatDialogModule,
-         MatGridListModule],
+         MatGridListModule,
+         MatSnackBarModule,
+         MatPaginatorModule,
+         MatSortModule],
         
 
 })

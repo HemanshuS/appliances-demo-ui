@@ -18,3 +18,29 @@ body {
     margin: 0;
     
 }
+
+
+
+snack-bar-container.success{
+  background-color: rgb(99, 111, 216);
+  color: cyan;
+
+}
+
+snack-bar-container.notification.simple-snack-bar{
+   font-size: 18px !important;
+  font-weight: bold;
+
+}
+
+snack-bar-container.errNotification.simple-snack-bar{
+  font-size: 18px !important;
+ font-weight: bold;
+
+}
+
+snack-bar-container.failure{
+  background-color: red;
+  color: cyan;
+
+}

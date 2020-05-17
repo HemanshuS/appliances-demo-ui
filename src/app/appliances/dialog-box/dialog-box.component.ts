@@ -3,6 +3,7 @@ import { Appliances } from '../appliances.model';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormGroup, NgForm, Validators, FormControl } from '@angular/forms';
 import { AppliancesService } from '../appliances.service';
+import { NotificationComponent } from 'src/app/notification/notification.component';
 
 @Component({
   selector: 'app-dialog-box',
@@ -18,7 +19,8 @@ export class DialogBoxComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DialogBoxComponent>,
     //@Optional() is used to prevent error if no data is passed
     @Optional() @Inject(MAT_DIALOG_DATA) public data: Appliances,
-    private applianceService: AppliancesService) {
+    private applianceService: AppliancesService,
+    private notification: NotificationComponent) {
     
       console.log(data);
       this.local_data = {...data};
@@ -64,13 +66,13 @@ ngOnInit(): void {
       model: this.form.value.model,
       status: 'Inuse'  ,   
       dateBought: this.form.value.dateBought
-  
-
+      
     });
     //this.applianceService.addAppliance(this.form.value);
     this.form.reset();
     //this.notificationService.success(" New Appliance Added");
     this.onClose();
+    this.notification.successMsg('New Appliance added.');
   }
 
   onClear(){
