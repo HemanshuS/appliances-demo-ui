@@ -72,7 +72,7 @@ ngOnInit(): void {
     this.form.reset();
     //this.notificationService.success(" New Appliance Added");
     this.onClose();
-    this.notification.successMsg('New Appliance added.');
+    //this.notification.successMsg('New Appliance added.');
   }
 
   onClear(){

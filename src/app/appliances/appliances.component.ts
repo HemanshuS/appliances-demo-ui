@@ -60,10 +60,18 @@ export class AppliancesComponent implements OnInit {
     diaglogConfig.height="70%";
     //obj.action = action;
     const dialogRef = this.dialog.open( DialogBoxComponent,diaglogConfig );
-      
+    dialogRef.afterClosed().subscribe(result => {
+      this.callGetAppliances(); 
+      this.notification.successMsg('New Appliance added.Please wait while is data is refreshed remote server!');
+    });
     }
     
     onEdit(){
+
+    }
+
+    onDelete(){
+
 
     }
 
@@ -77,5 +85,6 @@ export class AppliancesComponent implements OnInit {
 
       this.dataSource.filter = this.searchKey.trim().toLowerCase();
     }
+
 
 }

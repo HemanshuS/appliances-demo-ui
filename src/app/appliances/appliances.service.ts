@@ -34,12 +34,17 @@ export class AppliancesService{
     }
 
     addAppliance(appliance : Appliances){
-        console.log(appliance);
-        console.log("XXXX");
+       // console.log(appliance);
+       // console.log("XXXX");
 
      // const addApp  =  
       this.http.post(this.API_URL +'addAppliance',appliance)
         .toPromise().then(data => console.log(data));
         //console.log(addApp);
+    }
+
+    deleteAppliance(appliance : Appliances){
+       
+
     }
 }

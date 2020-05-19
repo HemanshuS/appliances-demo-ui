@@ -12,13 +12,13 @@
 
         <table mat-table [dataSource]="dataSource"  class="mat-elevation-z8" matSort>
 
-            <ng-container matColumnDef="serialNo">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>SerialNo</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.serialNo}}</mat-cell>
+            <ng-container matColumnDef="serialNo"  >
+                <mat-header-cell *matHeaderCellDef  mat-sort-header>SerialNo</mat-header-cell>
+                <mat-cell *matCellDef="let element"  >{{element.serialNo}}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="brand">
                 <mat-header-cell *matHeaderCellDef mat-sort-header>Brand</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.brand}}</mat-cell>
+                <mat-cell *matCellDef="let element">{{element.brand}}-{{element.id}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="model">
@@ -40,7 +40,7 @@
                 <mat-cell *matCellDef="let element" class="action-link"> 
                     <!--button mat-raised-button color="basic" [disabled]=false>Add Appliance</button> -->
                     <button mat-icon-button  (click)="onEdit()"><mat-icon>launch</mat-icon></button>
-                    <button mat-icon-button color=warn ><mat-icon>delete_outline</mat-icon></button>
+                    <button mat-icon-button  (click)="onDelete()" color=warn><mat-icon>delete_outline</mat-icon></button>
                 </mat-cell>
             
             </ng-container>
@@ -53,6 +53,6 @@
 </section>
 <section fxLayout fxLayoutAlign="right right">
     <button mat-button  mat-raised-button (click)="addAppliance()" color="primary">+ Add Appliance</button>
-    <button mat-button  mat-raised-button (click)="callGetAppliances()" color="primary">Refresh</button>
+    
     
 </section>
